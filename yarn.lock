@@ -543,22 +543,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash.pickby@npm:^4.6.7":
-  version: 4.6.7
-  resolution: "@types/lodash.pickby@npm:4.6.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 1a4d85dd4ce371352b65dead78e1c6d89c4d59c440bfd9b27023b1113c8610115f2dda17c056b94697f7bfbd947bd8abfe0afd5195b65e2675b404e0e1542fae
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*":
-  version: 4.14.183
-  resolution: "@types/lodash@npm:4.14.183"
-  checksum: 9c754dc7a2e5f26f9c67e494cffbe5447135a4e30eb2fcbc9da05dd5fa5fbf8579059bcf15014307c1c5d1c6d1b7870860618990d96abee9389d8cb79b3ac93c
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*":
   version: 18.7.4
   resolution: "@types/node@npm:18.7.4"
@@ -3610,13 +3594,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.pickby@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "lodash.pickby@npm:4.6.0"
-  checksum: a554d898c15bcd3218e4005b95b5146210bd862010c7d242d17106ee36aed9b9209a858ce974136ab1faadd86a82297761c206fda7f1886278bac827145c5536
-  languageName: node
-  linkType: hard
-
 "lodash@npm:4, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -5599,7 +5576,6 @@ __metadata:
   resolution: "vite-react-effector-tailwind-template@workspace:."
   dependencies:
     "@reduxjs/toolkit": ^1.8.4
-    "@types/lodash.pickby": ^4.6.7
     "@types/node": ^18.6.0
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
@@ -5618,7 +5594,6 @@ __metadata:
     eslint-plugin-simple-import-sort: ^7.0.0
     json-server: ^0.17.0
     json-server-auth: ^2.1.0
-    lodash.pickby: ^4.6.0
     myzod: ^1.8.8
     postcss: ^8.4.14
     prettier: ^2.7.1

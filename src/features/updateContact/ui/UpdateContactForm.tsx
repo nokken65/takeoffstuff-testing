@@ -1,8 +1,12 @@
-import pickBy from 'lodash.pickby';
 import { memo, useEffect, useMemo } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
-import { Contact, UpdateContactInputs } from '@/entities/Contacts';
+import {
+  Contact,
+  contactsModel,
+  UpdateContactInputs,
+} from '@/entities/Contacts';
 import { contactsApi } from '@/entities/Contacts/api';
 import { ContactFieldGroup } from '@/entities/Contacts/ui/ContactFieldGroup';
 import { Form, Input, myzodResolver } from '@/shared/lib/Form';
@@ -10,19 +14,18 @@ import { Button } from '@/shared/ui';
 
 import { updateContactSchema } from '../validation';
 
-type UpdatesInputs = UpdateContactInputs['updates'] & {
-  [k: string]: unknown;
-};
+type UpdatesInputs = UpdateContactInputs['updates'];
 
 type UpdateContactFormProps = {
+  defaultValues: UpdatesInputs;
   onSubmit: SubmitHandler<UpdatesInputs>;
   isLoading?: boolean;
 };
 
 const UpdateContactFormView = memo(
-  ({ isLoading, onSubmit }: UpdateContactFormProps) => {
+  ({ defaultValues, isLoading, onSubmit }: UpdateContactFormProps) => {
     const methods = useForm<UpdatesInputs>({
-      defaultValues: {},
+      defaultValues: defaultValues,
       resolver: myzodResolver(updateContactSchema),
       mode: 'onChange',
     });
@@ -119,25 +122,6 @@ const UpdateContactFormView = memo(
   },
 );
 
-const getUpdates = (formData: UpdatesInputs) => {
-  const updates: UpdatesInputs = {};
-
-  for (const key in formData) {
-    if (typeof formData[key] === 'object') {
-      const obj = pickBy(formData[key] as object, (o) => !!o);
-      if (obj && Object.keys(obj).length > 0) {
-        updates[key] = obj;
-      }
-    } else {
-      if (!!formData[key]) {
-        updates[key] = formData[key];
-      }
-    }
-  }
-
-  return updates;
-};
-
 type UpdateContactFormContainerProps = Pick<Contact, 'id'> & {
   onCloseForm: () => void;
 };
@@ -147,11 +131,22 @@ const UpdateContactFormContainer = ({
   onCloseForm,
 }: UpdateContactFormContainerProps) => {
   const [update, { isLoading, error }] = contactsApi.useUpdateContactMutation();
+  const contact = useSelector(contactsModel.selectors.selectContactById(id));
+
+  const defaultValues: UpdatesInputs = useMemo(() => {
+    if (contact) {
+      const { id: _id, userId: _userId, ...rest } = contact;
+
+      return rest;
+    } else {
+      return {};
+    }
+  }, []);
 
   const onSubmit: SubmitHandler<UpdatesInputs> = async (formData) => {
     try {
-      await update({ updates: getUpdates(formData), id }).unwrap();
-      await onCloseForm();
+      await update({ updates: formData, id }).unwrap();
+      onCloseForm();
     } catch (err) {
       console.error(err);
     }
@@ -172,7 +167,11 @@ const UpdateContactFormContainer = ({
 
   return (
     <div className='flex w-full flex-col items-center gap-6'>
-      <UpdateContactFormView isLoading={isLoading} onSubmit={onSubmit} />
+      <UpdateContactFormView
+        defaultValues={defaultValues}
+        isLoading={isLoading}
+        onSubmit={onSubmit}
+      />
       {errorMsg && (
         <span className='w-full max-w-md bg-red-400 p-3 text-white '>
           {errorMsg}

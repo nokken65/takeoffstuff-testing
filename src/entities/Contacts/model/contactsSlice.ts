@@ -34,6 +34,8 @@ const contactsSlice = createSlice({
 export { contactsSlice };
 export const { reducer } = contactsSlice;
 
+const selectContactById = (id: number) => (state: RootState) =>
+  state.contacts.contacts.find((contact) => contact.id === id);
 const selectContacts = (state: RootState) => state.contacts.contacts;
 
-export const selectors = { selectContacts };
+export const selectors = { selectContacts, selectContactById };
