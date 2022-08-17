@@ -1,7 +1,7 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:5000',
+  baseUrl: 'https://powerful-waters-87808.herokuapp.com',
   credentials: 'include',
   prepareHeaders: (headers) => {
     // const { token } = (getState() as RootState).auth;
