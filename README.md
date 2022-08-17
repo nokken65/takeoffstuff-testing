@@ -1,19 +1,14 @@
-# Vite + React + Effector + Tailwind CSS starter
+node -v
+v18.7.0
 
-## Installation
+## Start server
 
 ```sh
-yarn
+yarn start:server
 ```
 
-## Development
+## Start client
 
 ```sh
 yarn dev
-```
-
-## Build
-
-```sh
-yarn build
 ```
