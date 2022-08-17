@@ -1,6 +1,9 @@
 node -v
 v18.7.0
 
+email: alex@mail.com
+password: 1234
+
 ## Start server
 
 ```sh
