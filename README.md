@@ -10,5 +10,5 @@ yarn start:server
 ## Start client
 
 ```sh
-yarn dev
+yarn start
 ```
