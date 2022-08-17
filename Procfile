@@ -1,1 +1,1 @@
-web: yarn start:server --port 3000
+web: yarn start:server

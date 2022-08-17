@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "start": "yarn build && vite preview",
-    "start:server": "json-server ./server/db.json -c ./server/config.json -m ./node_modules/json-server-auth -r ./server/routes.json",
+    "start:server": "node server/server.js",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
