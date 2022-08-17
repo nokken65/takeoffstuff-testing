@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "email": "alex@mail.com",
+      "password": "$2a$10$qmcA/l55flyUDuhZUR5oaOoiXlosZRLRDWyvBoiC0K7BANd0Q0/hG",
+      "username": "alex",
+      "id": 1
+    },
+    {
+      "email": "mary@mail.com",
+      "password": "$2a$10$4uxTtKAdTmjo8j1HrWGpKevrnm4mxtS7jlSl3aJtwkCeiSqlzb8zG",
+      "username": "mary",
+      "id": 2
+    },
+    {
+      "email": "unknown65182@gmail.com",
+      "password": "$2a$10$P.7j02mqLOl9IBrDIh3V9.aTpq5IATIHCrBBA5AexmL39Sn2cLiba",
+      "username": "nokken65",
+      "id": 3
+    }
+  ],
+  "contacts": [
+    {
+      "id": 6,
+      "userId": 1,
+      "name": "Mrs. Dennis Schulist",
+      "email": "Karley_Dach@jasper.info",
+      "address": {
+        "street": "Norberto Crossing",
+        "suite": "Apt. 950",
+        "city": "South Christy",
+        "zipcode": "23505-1337"
+      },
+      "phone": "477-935-8478",
+      "website": "olllla.org",
+      "company": {
+        "name": "Considine-Lockman",
+        "catchPhrase": "Synchronised bottom-line interface",
+        "bs": "e-enable innovative applications"
+      }
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "name": "Nicholas Runolfsdottir V",
+      "email": "Sherwood@rosamond.me",
+      "address": {
+        "street": "Ellsworth Summit",
+        "suite": "Suite 729",
+        "city": "Aliyaview",
+        "zipcode": "45169-5323"
+      },
+      "phone": "586-493-6943",
+      "website": "jacynthe.com",
+      "company": {
+        "name": "Abernathy Group",
+        "catchPhrase": "Implemented secondary concept",
+        "bs": "e-enable extensible e-tailers"
+      }
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "name": "Glenna Reichert",
+      "email": "Chaim_McDermott@dana.io",
+      "address": {
+        "street": "Dayna Park",
+        "suite": "Suite 449",
+        "city": "Bartholomebury",
+        "zipcode": "76495-3109"
+      },
+      "phone": "(775)976-6794",
+      "website": "conrad.com",
+      "company": {
+        "name": "Yost and Sons",
+        "catchPhrase": "Switchable contextually-based project",
+        "bs": "aggregate real-time technologies"
+      }
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "name": "Clementina DuBuque",
+      "email": "Rey.Padberg@karina.biz",
+      "address": {
+        "street": "Kattie Turnpike",
+        "suite": "Suite 198",
+        "city": "Lebsackbury",
+        "zipcode": "31428-2261"
+      },
+      "phone": "024-648-3804",
+      "website": "ambrose.net",
+      "company": {
+        "name": "Hoeger LLC",
+        "catchPhrase": "Centralized empowering task-force",
+        "bs": "target end-to-end models"
+      }
+    }
+  ]
+}

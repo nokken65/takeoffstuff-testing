@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-size: 16px;
+    color: theme('colors.gray.800');
+    @apply bg-white;
+  }
+
+  #app-root {
+    @apply mx-auto flex h-full min-h-screen w-full max-w-7xl flex-col items-center justify-between;
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-blue-400 transition-colors duration-150 ease-in-out hover:text-blue-500;
+  }
+}
+
+@layer utilities {
+  .writing-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
